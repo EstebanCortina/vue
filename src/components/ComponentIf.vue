@@ -1,10 +1,13 @@
 <template>
-  <h1>Hola </h1>
-  <!--<p>{{ edad }}</p>-->
+  <h1>Lista de Paises</h1>
+  <ul>
+    <li v-for="pais in paises" v-bind:key="pais">{{ pais }}</li>
+  </ul>
 </template>
 
 <script lang="ts" setup>
-//let edad = 11;
+import { Ref, ref } from "vue";
+let paises: Ref<Array<string>> = ref(['Mexico', 'España', 'UK']);
 </script> 
 
 <style></style>
