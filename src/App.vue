@@ -31,6 +31,18 @@
       <ReactiveComponent />
     </div>
   </section>
+  <section>
+    <div>
+      <h1>Ciclo de vida de los componentes</h1>
+      <div>
+        <LifeCycle />
+      </div>
+    </div>
+    <div>
+      <h1>Comunicacion vertical(padre a hijo)</h1>
+      <VerticalCom />
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -40,6 +52,8 @@ import ComponentShow from "./components/ComponentShow.vue";
 import ComponentFor from "./components/ComponentFor.vue";
 import ClassAndBind from "./components/ClassAndBind.vue";
 import ReactiveComponent from "./components/ReactiveComponents.vue";
+import LifeCycle from "./components/LifeCycle.vue";
+import VerticalCom from "./components/VerticalCom.vue";
 </script>
 
 <style scoped>
