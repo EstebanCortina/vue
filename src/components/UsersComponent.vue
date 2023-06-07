@@ -1,8 +1,10 @@
 <template>
-  <h1>{{ id }}</h1>
-  <p>{{ username }}</p>
-  <button @click="emitirSaludo()">Saludar</button>
-  <button @click="showPosts(id)">Ver posts</button>
+  <div class="card">
+    <h3>{{ id }}.- {{ username }}</h3>
+    <button @click="emitirSaludo()">Saludar</button>
+    <button @click="showPosts(id)">Ver posts</button>
+    <button @click="closePosts">Cerrar posts</button>
+  </div>
 </template>
 <script lang="ts" setup>
 import { defineProps, defineEmits } from 'vue'
@@ -17,7 +19,7 @@ const props = defineProps({
     required: true
   }
 });
-const emit = defineEmits(['holaPadre', 'showPosts']);
+const emit = defineEmits(['holaPadre', 'showPosts', 'closePosts']);
 
 function emitirSaludo(): void {
   emit('holaPadre', `Hola padre, soy: ${props.username}`);
@@ -25,5 +27,14 @@ function emitirSaludo(): void {
 function showPosts(userId: number): void {
   emit('showPosts', userId);
 }
+function closePosts() {
+  emit('closePosts');
+}
 </script>
-<style scoped></style>
+<style scoped>
+.card {
+  text-align: center;
+  margin: 10px;
+  flex-basis: calc(100% / 6);
+}
+</style>

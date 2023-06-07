@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <h1>{{ props.title }}</h1>
     <p>{{ props.body }}</p>
     <p>By:{{ props.username }}</p>
@@ -27,4 +27,11 @@ const props = defineProps({
 })
 
 </script>
-<style scoped></style>
+<style scoped>
+.card {
+  background-color: darkgreen;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+}
+</style>

@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <ul>
-      <UsersComponent v-for="user in dataUsers" :key="user.id" :id="user.id" :username="user.name" @holaPadre="saludar"
-        @showPosts="showPosts" />
-    </ul>
+  <div class="container">
+    <UsersComponent v-for="user in dataUsers" :key="user.id" :id="user.id" :username="user.name" @holaPadre="saludar"
+      @showPosts="showPosts" @closePosts="closePosts" />
     <div>
       <ul>
         <!--<li v-for="(post, index) in data" :key="index">{{ post }}</li>-->
@@ -81,10 +79,18 @@ function showPosts(userId: number): void {
     }
   }
 }
-
+function closePosts(): void {
+  aux.value = [];
+}
 
 
 
 
 </script>
-<style></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+</style>

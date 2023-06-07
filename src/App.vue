@@ -32,7 +32,7 @@
     </div>
   </section>
   <section>
-    <div>
+    <div class="box">
       <h1>Ciclo de vida de los componentes</h1>
       <div>
         <LifeCycle />
@@ -40,12 +40,28 @@
     </div>
   </section>
   <section>
-    <div>
-      <formComponent />
+    <div class="box">
+      <h1>Captura y guardado de datos</h1>
+      <div>
+        <formComponent />
+      </div>
     </div>
   </section>
   <section>
-    <VerticalCom />
+    <div class="box">
+      <h1>Comunicacion vertical y ascendente</h1>
+      <div>
+        <VerticalCom />
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="box">
+      <h1>Datos computados</h1>
+      <div>
+        <ComputedComponent />
+      </div>
+    </div>
   </section>
 </template>
 
@@ -59,6 +75,7 @@ import ReactiveComponent from "./components/ReactiveComponents.vue";
 import LifeCycle from "./components/LifeCycle.vue";
 import formComponent from "./components/formComponent.vue";
 import VerticalCom from './components/VerticalCom.vue';
+import ComputedComponent from "./components/ComputedComponent.vue";
 </script>
 
 <style scoped>
