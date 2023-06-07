@@ -1,50 +1,38 @@
 <template>
   <div>
-    <!-- <VerticalComDetail v-for="elm in Users" :key="elm.id" :id="elm.id" :name="elm.name" />-->
-    <p v-for="elm in Users" :key="elm.id">{{ elm }}</p>
+    <ul>
+      <li v-for="user in data" :key="user.id">{{ user.id }} {{ user.name }}</li>
+    </ul>
   </div>
 </template>
 <script lang="ts" setup>
-import VerticalComDetail from './VerticalComDetail.vue'
-import { onMounted, ref, Ref } from 'vue'
-import { defineProps } from 'vue';
 
-interface User {
+import { onBeforeMount, ref, Ref } from 'vue'
+
+
+interface IUser {
   id: number;
   name: string;
 }
-const data: Ref = ref([]);
-const Users: User[] = [];
-const A: string[] = ["Uno", "Dos"];
-/*
-onMounted(async () => {
-  await fetch('https://jsonplaceholder.typicode.com/users')
+const data: Ref<Array<IUser>> = ref([]);
+
+onBeforeMount(() => {
+  fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => {
-      users.forEach((user: User) => {
-        //Object Destructuring
+      users.forEach((user: IUser) => {
         const { id, name } = user;
-        const u: User = {
+        let newUser: IUser = {
           id,
-          name,
-        };
-        Users.push(u);
+          name
+        }
+        data.value.push(newUser);
       });
-      console.log(Users);
-    });
-})
-*/
 
-onMounted(async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
-  const users = await response.json();
-  console.log(users);
-  users.forEach((element: User) => {
+    })
+});
 
-    Users.push(element);
-  });
 
-})
 
 
 

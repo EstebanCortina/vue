@@ -38,10 +38,14 @@
         <LifeCycle />
       </div>
     </div>
+  </section>
+  <section>
     <div>
-      <h1>Comunicacion vertical(padre a hijo)</h1>
-      <VerticalCom />
+      <formComponent />
     </div>
+  </section>
+  <section>
+    <VerticalCom />
   </section>
 </template>
 
@@ -53,7 +57,8 @@ import ComponentFor from "./components/ComponentFor.vue";
 import ClassAndBind from "./components/ClassAndBind.vue";
 import ReactiveComponent from "./components/ReactiveComponents.vue";
 import LifeCycle from "./components/LifeCycle.vue";
-import VerticalCom from "./components/VerticalCom.vue";
+import formComponent from "./components/formComponent.vue";
+import VerticalCom from './components/VerticalCom.vue';
 </script>
 
 <style scoped>

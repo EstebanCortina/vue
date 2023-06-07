@@ -8,6 +8,7 @@
 import { onMounted, onUpdated } from "vue";
 
 //Call back function
+
 onMounted(() => {
   console.log("Mounted");
 });
