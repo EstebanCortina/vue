@@ -63,6 +63,11 @@
       </div>
     </div>
   </section>
+  <section>
+    <div>
+      <MakeDirectivesComponent />
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -76,6 +81,9 @@ import LifeCycle from "./components/LifeCycle.vue";
 import formComponent from "./components/formComponent.vue";
 import VerticalCom from './components/VerticalCom.vue';
 import ComputedComponent from "./components/ComputedComponent.vue";
+import MakeDirectivesComponent from "./components/MakeDirectivesComponent.vue";
+
+
 </script>
 
 <style scoped>
